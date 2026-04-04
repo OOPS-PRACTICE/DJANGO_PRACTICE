@@ -6,4 +6,9 @@ Project Home page
 <br>
 {% block content %}
 <h1 class="bg-orange-50 text-3xl">Project Home Page Content <h1>
+    {% for project in projects  %}
+      <div class="project-item">
+        <img src="{{project.image.url}}" alt="">
+        <h3>{{project.name}}</h3>
+    {% endfor %}
 {% endblock content %}
