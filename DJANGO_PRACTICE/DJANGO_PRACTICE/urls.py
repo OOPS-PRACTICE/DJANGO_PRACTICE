@@ -19,6 +19,10 @@ from django.urls import path, include
 from . import views
 from django.conf import settings
 from django.conf.urls.static import static
+from rest_framework_simplejwt.views import (
+    TokenObtainPairView,
+    TokenRefreshView,
+)
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -26,5 +30,12 @@ urlpatterns = [
     path('contact/', views.contact),
     path('project/', include('project.urls')),
 
+
+    path('project/token/', TokenObtainPairView.as_view(), name='token_obtain_pair'),
+    path('project/token/refresh/', TokenRefreshView.as_view(), name='token_refresh'),
+
+
     path("_reload_/", include("django_browser_reload.urls")),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+
+
