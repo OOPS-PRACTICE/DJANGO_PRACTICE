@@ -5,10 +5,19 @@ Project Home page
 {% endblock title %}
 <br>
 {% block content %}
+<div class="grid grid-cols-3 gap-4 m-4">
 <h1 class="bg-orange-50 text-3xl">Project Home Page Content <h1>
     {% for project in projects  %}
-      <div class="project-item">
-        <img src="{{project.image.url}}" alt="">
-        <h3>{{project.name}}</h3>
+      <div class="bg-amber-400 p-6">
+        <h3 class="text-2xl font-bold">{{project.name}}</h3>
+        <img class="rounded" src="{{project.image.url}}" alt="">
+        <a href="{% url 'project_details' project.id %}">
+          <button type="button" class="bg-fuchsia-400">
+            {{project.id}} 
+          </button>
+        </a>
+        </div>
     {% endfor %}
+    </div>
 {% endblock content %}
+      
