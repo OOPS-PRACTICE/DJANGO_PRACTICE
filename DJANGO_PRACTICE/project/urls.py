@@ -21,7 +21,8 @@ from . import views
 urlpatterns = [
     path('', views.all_projects, name="all_projects"),
     path('<int:project_id>/', views.project_details, name='project_details'),
-    path('project_deployments/', views.project_deployment_view, name="project_deploynents"),
+    # path('project_deployments/', views.project_deployment_view, name="project_deploynents"),
+    path('create/', views.create_project_type, name='create_project_type'),
     path('test/', views.test_api, name='test_api'),
 
 ]

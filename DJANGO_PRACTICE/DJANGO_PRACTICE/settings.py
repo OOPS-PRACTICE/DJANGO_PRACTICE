@@ -27,7 +27,7 @@ SECRET_KEY = 'django-insecure-el6ifec4hcfjwll*h%=p0@7ss$11193z=s_p3pfa_-0*h1qpta
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -44,6 +44,7 @@ INSTALLED_APPS = [
     'theme',
     'django_browser_reload',
     'rest_framework',
+    'rest_framework_simplejwt',
 ]
 
 TAILWIND_APP_NAME = 'theme'
